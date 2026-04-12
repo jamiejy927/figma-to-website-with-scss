@@ -1,120 +1,108 @@
 @charset "UTF-8";
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+// 1. 변수 설정
+$padding-x: 100px;
+$blue-color: #3190E8;
+$gray-bg: #F5F5F5;
+$black-color: #000;
 
+// 2. 초기화 및 공통
+* { margin: 0; padding: 0; box-sizing: border-box; }
 body {
   font-family: 'DM Sans', sans-serif;
   overflow-x: hidden;
   background-color: #fff;
-  color: #000;
+  color: $black-color;
 }
 
-.header {
-  width: 100%;
-  position: absolute;
-  top: 47px;
-  left: 0;
-  z-index: 100;
-  padding: 0 100px; 
-
-  .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    max-width: none !important;
-    margin: 0 !important;
-  }
-
-  .logo {
-    display: block;
-    img {
-      width: 186px;
-      height: auto;
-      display: block;
-    }
-  }
-
-  .nav ul {
-    display: flex;
-    list-style: none;
-    gap: 80px;
-
-    li a {
-      text-decoration: none;
-      color: #000;
-      font-size: 24px;
-      font-weight: 400;
-      line-height: 1.1;
-      letter-spacing: 2.88px;
-      text-transform: uppercase;
-      white-space: nowrap;
-    }
-  }
-}
-
-.hero {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  background: url('../images/bg-sketch.png') no-repeat center center;
-  background-size: cover;
+.container {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  width: 100%;
+  padding: 0 $padding-x;
+}
 
-  .hero-content {
-    text-align: center;
-    width: 100%;
-    
-    .hero-illustration {
-      display: flex;
-      justify-content: center;
-      img {
-        width: 942px;
-        max-width: 90%;
-        height: auto;
-      }
-    }
+// 공통 버튼 스타일 (피그마의 VIEW MORE 등)
+.btn-view {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 1px solid $black-color;
+  text-decoration: none;
+  color: $black-color;
+  font-weight: 700;
+  font-size: 14px;
+  margin-top: 20px;
+  transition: 0.3s;
+  &:hover { background: $black-color; color: #fff; }
+}
+
+// 3. 헤더 (기존 코드 유지)
+.header {
+  width: 100%; position: absolute; top: 47px; left: 0; z-index: 100;
+  .logo img { width: 186px; height: auto; }
+  .nav ul {
+    display: flex; list-style: none; gap: 80px;
+    li a { text-decoration: none; color: $black-color; font-size: 24px; letter-spacing: 2.88px; text-transform: uppercase; }
   }
+}
 
+// 4. 섹션별 스타일
+// Hero
+.hero {
+  position: relative; width: 100%; height: 100vh;
+  background: url('../images/bg-sketch.png') no-repeat center center / cover;
+  display: flex; justify-content: center; align-items: center;
   .sns-links {
-    position: absolute;
-    left: 100px;
-    top: 50%;
-    transform: translateY(-50%);
-    display: flex;
-    flex-direction: column;
-    gap: 36px;
-
-    img {
-      width: 32px;
-      height: 32px;
-    }
+    position: absolute; left: $padding-x; top: 50%; transform: translateY(-50%);
+    display: flex; flex-direction: column; gap: 36px;
+    img { width: 32px; height: 32px; }
   }
-
+  .hero-illustration img { width: 942px; max-width: 90%; }
   .scroll-text {
-    position: absolute;
-    right: 100px;
-    bottom: 80px;
-    writing-mode: vertical-rl;
-    font-size: 14px;
-    letter-spacing: 10px;
-    color: #000;
-    font-weight: 500;
-    text-transform: uppercase;
+    position: absolute; right: $padding-x; bottom: 80px; writing-mode: vertical-rl;
+    font-size: 14px; letter-spacing: 10px; font-weight: 500;
+    &::after { content: ''; display: block; width: 1px; height: 60px; background: $black-color; margin: 15px auto 0; }
+  }
+}
 
-    &::after {
-      content: '';
-      display: block;
-      width: 1px;
-      height: 60px;
-      background-color: #000;
-      margin: 15px auto 0;
-    }
+// Intro, UXSpace, Career (좌우 텍스트/이미지 구조)
+.sec-intro, .sec-uxspace, .sec-career {
+  padding: 150px 0;
+  .text-area { width: 45%; h2 { font-size: 56px; margin-bottom: 20px; } }
+  .img-area { width: 50%; img { width: 100%; height: auto; } }
+}
+
+// Portfolio (Blue)
+.sec-portfolio {
+  background-color: $blue-color; color: #fff; padding: 100px 0;
+  .top-title { font-size: 20px; margin-bottom: 50px; .highlight { font-weight: 700; text-decoration: underline; } }
+  h3 { font-size: 32px; margin-bottom: 30px; }
+  .portfolio-grid {
+    display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px;
+    .grid-item img { width: 100%; display: block; }
+  }
+}
+
+// Events (Gray)
+.sec-events {
+  background-color: $gray-bg; padding: 120px 0;
+  .container { flex-direction: row; } // 이미지 좌측, 텍스트 우측
+  .img-area { width: 50%; }
+  .text-area { width: 40%; .label { font-weight: 700; font-size: 32px; } }
+  .btn-view { border-color: $black-color; }
+}
+
+// Footer
+.footer {
+  background: $black-color; color: #fff;
+  .contact-section {
+    padding: 60px 0; border-bottom: 1px solid #333;
+    .container { font-size: 48px; text-transform: uppercase; justify-content: space-between; }
+  }
+  .footer-bottom {
+    padding: 40px 0;
+    .f-logo { font-size: 24px; font-weight: 700; }
+    .f-nav a { color: #fff; margin-left: 40px; text-decoration: none; font-size: 14px; }
   }
 }

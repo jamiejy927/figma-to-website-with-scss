@@ -1,0 +1,197 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+  overflow-x: hidden;
+  background-color: #fff;
+  color: #000;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 100px;
+}
+
+.btn-view {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 1px solid #000;
+  text-decoration: none;
+  color: #000;
+  font-weight: 700;
+  font-size: 14px;
+  margin-top: 20px;
+  transition: 0.3s;
+}
+.btn-view:hover {
+  background: #000;
+  color: #fff;
+}
+
+.header {
+  width: 100%;
+  position: absolute;
+  top: 47px;
+  left: 0;
+  z-index: 100;
+}
+.header .logo img {
+  width: 186px;
+  height: auto;
+}
+.header .nav ul {
+  display: flex;
+  list-style: none;
+  gap: 80px;
+}
+.header .nav ul li a {
+  text-decoration: none;
+  color: #000;
+  font-size: 24px;
+  letter-spacing: 2.88px;
+  text-transform: uppercase;
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url("../images/bg-sketch.png") no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hero .sns-links {
+  position: absolute;
+  left: 100px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+.hero .sns-links img {
+  width: 32px;
+  height: 32px;
+}
+.hero .hero-illustration img {
+  width: 942px;
+  max-width: 90%;
+}
+.hero .scroll-text {
+  position: absolute;
+  right: 100px;
+  bottom: 80px;
+  writing-mode: vertical-rl;
+  font-size: 14px;
+  letter-spacing: 10px;
+  font-weight: 500;
+}
+.hero .scroll-text::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 60px;
+  background: #000;
+  margin: 15px auto 0;
+}
+
+.sec-intro, .sec-uxspace, .sec-career {
+  padding: 150px 0;
+}
+.sec-intro .text-area, .sec-uxspace .text-area, .sec-career .text-area {
+  width: 45%;
+}
+.sec-intro .text-area h2, .sec-uxspace .text-area h2, .sec-career .text-area h2 {
+  font-size: 56px;
+  margin-bottom: 20px;
+}
+.sec-intro .img-area, .sec-uxspace .img-area, .sec-career .img-area {
+  width: 50%;
+}
+.sec-intro .img-area img, .sec-uxspace .img-area img, .sec-career .img-area img {
+  width: 100%;
+  height: auto;
+}
+
+.sec-portfolio {
+  background-color: #3190E8;
+  color: #fff;
+  padding: 100px 0;
+}
+.sec-portfolio .top-title {
+  font-size: 20px;
+  margin-bottom: 50px;
+}
+.sec-portfolio .top-title .highlight {
+  font-weight: 700;
+  text-decoration: underline;
+}
+.sec-portfolio h3 {
+  font-size: 32px;
+  margin-bottom: 30px;
+}
+.sec-portfolio .portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+}
+.sec-portfolio .portfolio-grid .grid-item img {
+  width: 100%;
+  display: block;
+}
+
+.sec-events {
+  background-color: #F5F5F5;
+  padding: 120px 0;
+}
+.sec-events .container {
+  flex-direction: row;
+}
+.sec-events .img-area {
+  width: 50%;
+}
+.sec-events .text-area {
+  width: 40%;
+}
+.sec-events .text-area .label {
+  font-weight: 700;
+  font-size: 32px;
+}
+.sec-events .btn-view {
+  border-color: #000;
+}
+
+.footer {
+  background: #000;
+  color: #fff;
+}
+.footer .contact-section {
+  padding: 60px 0;
+  border-bottom: 1px solid #333;
+}
+.footer .contact-section .container {
+  font-size: 48px;
+  text-transform: uppercase;
+  justify-content: space-between;
+}
+.footer .footer-bottom {
+  padding: 40px 0;
+}
+.footer .footer-bottom .f-logo {
+  font-size: 24px;
+  font-weight: 700;
+}
+.footer .footer-bottom .f-nav a {
+  color: #fff;
+  margin-left: 40px;
+  text-decoration: none;
+  font-size: 14px;
+}/*# sourceMappingURL=style.css.map */
