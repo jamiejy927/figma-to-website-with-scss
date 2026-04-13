@@ -9,6 +9,7 @@ body {
   overflow-x: hidden;
   background-color: #fff;
   color: #000;
+  width: 100%;
 }
 
 .container {
@@ -16,7 +17,9 @@ body {
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  max-width: 100%;
   padding: 0 100px;
+  margin: 0 auto;
 }
 
 .btn-view {
@@ -63,7 +66,7 @@ body {
   position: relative;
   width: 100%;
   height: 100vh;
-  background: url("../images/bg-sketch.png") no-repeat center center/cover;
+  background: url("/images/bg-sketch.png") no-repeat center center/cover;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -103,20 +106,57 @@ body {
   margin: 15px auto 0;
 }
 
-.sec-intro, .sec-uxspace, .sec-career {
+/* Section 2: Intro */
+.sec-intro {
+  display: block;
+  width: 100%;
+  background-color: #EDF0F9 !important;
   padding: 150px 0;
 }
-.sec-intro .text-area, .sec-uxspace .text-area, .sec-career .text-area {
+.sec-intro .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.sec-intro .text-area {
   width: 45%;
 }
-.sec-intro .text-area h2, .sec-uxspace .text-area h2, .sec-career .text-area h2 {
+.sec-intro .text-area h2 {
   font-size: 56px;
   margin-bottom: 20px;
 }
-.sec-intro .img-area, .sec-uxspace .img-area, .sec-career .img-area {
+.sec-intro .text-area p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+.sec-intro .img-area {
   width: 50%;
 }
-.sec-intro .img-area img, .sec-uxspace .img-area img, .sec-career .img-area img {
+.sec-intro .img-area img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.sec-uxspace,
+.sec-career {
+  padding: 150px 0;
+}
+.sec-uxspace .text-area,
+.sec-career .text-area {
+  width: 45%;
+}
+.sec-uxspace .text-area h2,
+.sec-career .text-area h2 {
+  font-size: 56px;
+  margin-bottom: 20px;
+}
+.sec-uxspace .img-area,
+.sec-career .img-area {
+  width: 50%;
+}
+.sec-uxspace .img-area img,
+.sec-career .img-area img {
   width: 100%;
   height: auto;
 }
@@ -152,9 +192,6 @@ body {
   background-color: #F5F5F5;
   padding: 120px 0;
 }
-.sec-events .container {
-  flex-direction: row;
-}
 .sec-events .img-area {
   width: 50%;
 }
@@ -164,9 +201,6 @@ body {
 .sec-events .text-area .label {
   font-weight: 700;
   font-size: 32px;
-}
-.sec-events .btn-view {
-  border-color: #000;
 }
 
 .footer {
